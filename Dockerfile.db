@@ -1,0 +1,8 @@
+# syntax=docker/dockerfile:1
+
+ARG POSTGRES_VERSION=15
+FROM postgres:${POSTGRES_VERSION}
+
+# install system dependencies
+RUN apt-get update && apt-get upgrade -y
+RUN apt-get install postgis postgresql-15-postgis-scripts -y
